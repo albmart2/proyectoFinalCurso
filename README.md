@@ -9,3 +9,12 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
     |-prometheus.yml
     |-docker-compose.yml
     |-playbook.yml
+## Ejecutar el proyecto
+### Requisitos previos
+Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
+### Ejecutar el Playbook
+Para poder iniciar todos los servicios, debemos de ejecutar:
+
+	ansible-playbook playbook.yml --tags "start"
+## Explicacion del proyecto detalladamente
+
