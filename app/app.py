@@ -21,7 +21,7 @@ def home():
 
     ULTIMO_NUMERO_ALEATORIO.set(numero_aleatorio)
 
-    return f"<h1>Texto sencillo</h1><p>El número aleatorio es: {numero_aleatorio}</p><p>Visita <a href='/metrics'>/metrics</a> para ver las métricas.</p>"
+    return f"<h1>APP Números aleatorios</h1><p>El número aleatorio es: {numero_aleatorio}</p><p>Visita <a href='/metrics'>/metrics</a> para ver las métricas.</p>"
 
 @app.route('/metrics')
 def metrics():
