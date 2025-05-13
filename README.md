@@ -1,6 +1,6 @@
 # Proyecto Final Curso DevOps | AIOps
 ## Idea general del proyecto
-Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Docker.
+Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Ansible.
 ## Estructura del proyecto
 
 	proyectoFinalCurso/
@@ -26,17 +26,11 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 	sudo apt install ansible -y
 	```
 
-2. Verificar la disponibilidad de ansible-galaxy:
+2. Verificar la disponibilidad de ```ansible-galaxy```:
 
 	```bash
 	ansible-galaxy --help
 	```
-
-### Ejecutar Docker
-Para poder crear la imagen de Docker, debemos de ejecutar:
-```bash
-docker compose up -d
-```
 
 ### Ejecutar el Playbook
 - Para poder iniciar todos los servicios, debemos de ejecutar:
@@ -52,4 +46,3 @@ docker compose up -d
 	```
 
 ## Explicacion del proyecto detalladamente
-
