@@ -20,6 +20,9 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 
 	```bash
 	sudo apt update
+	```
+
+	```bash
 	sudo apt install ansible -y
 	```
 
