@@ -34,10 +34,9 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 
 ### Ejecutar Docker
 Para poder crear la imagen de Docker, debemos de ejecutar:
-
-	```
-	docker compose up -d
-	```
+```
+docker compose up -d
+```
 
 ### Ejecutar el Playbook
 - Para poder iniciar todos los servicios, debemos de ejecutar:
