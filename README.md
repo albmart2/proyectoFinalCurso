@@ -15,7 +15,9 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 ### Ejecutar el Playbook
 - Para poder iniciar todos los servicios, debemos de ejecutar:
 
-		ansible-playbook playbook.yml --tags "start"
+	```bash
+	ansible-playbook playbook.yml --tags "start"
+	```
 
 - Para poder detener y eliminar todos los servicios, debemos de ejecutar:
 	
