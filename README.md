@@ -35,7 +35,7 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 ### Ejecutar Docker
 Para poder crear la imagen de Docker, debemos de ejecutar:
 
-	```bash
+	```
 	docker compose up -d
 	```
 
