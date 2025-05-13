@@ -1,21 +1,24 @@
 # playbook.yml
 - name: Gestionar la pila de monitorización con Docker Compose
-  hosts: localhost   # Indica que el playbook se ejecuta en la máquina local
-  connection: local  # Usa una conexión local, no SSH
-  gather_facts: false # No necesitamos recoger 'facts' para esta tarea simple
+  hosts: localhost
+  connection: local
+  gather_facts: false
 
   tasks:
-    - name: Levantar los servicios definidos en docker-compose.yml
-      community.docker.docker_compose_v2:
-        project_src: .  # Ruta al directorio que contiene docker-compose.yml ('.' es el directorio actual)
-        state: present  # 'present' asegura que los servicios estén creados y corriendo (equivale a 'docker compose up -d')
+    - name: Asegurar que los servicios Docker Compose estén levantados
+      ansible.builtin.command: docker compose up -d
+      args:
+        chdir: "{{ playbook_dir }}" # playbook_dir es el directorio donde está este playbook.yml
+      register: compose_up_result
+      changed_when: "'Creating' in compose_up_result.stdout or 'Recreating' in compose_up_result.stdout or 'Starting' in compose_up_result.stdout"
+      failed_when: compose_up_result.rc != 0 and not ('is up-to-date' in compose_up_result.stdout or 'Running' in compose_up_result.stdout) # Considera no fallar si ya está arriba
       tags:
         - start
 
-    - name: Detener y eliminar los servicios definidos en docker-compose.yml
-      community.docker.docker_compose_v2:
-        project_src: .
-        state: absent   # 'absent' asegura que los servicios estén parados y eliminados (equivale a 'docker compose down')
+    - name: Detener y eliminar los servicios Docker Compose
+      ansible.builtin.command: docker compose down
+      args:
+        chdir: "{{ playbook_dir }}"
       tags:
         - stop
 

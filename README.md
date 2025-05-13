@@ -32,6 +32,13 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 	ansible-galaxy --help
 	```
 
+### Ejecutar Docker
+Para poder crear la imagen de ```Docker```, debemos de ejecutar:
+
+	```bash
+	docker compose up -d
+	```
+
 ### Ejecutar el Playbook
 - Para poder iniciar todos los servicios, debemos de ejecutar:
 
