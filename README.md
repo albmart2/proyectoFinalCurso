@@ -2,6 +2,7 @@
 ## Idea general del proyecto
 Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Docker.
 ## Estructura del proyecto
+
 	```text
 	proyectoFinalCurso/
 	├── app/
