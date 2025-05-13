@@ -17,14 +17,18 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
 Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
 ### Instalacion Ansible en Linux (Debian/Ubuntu)
 1. Instalar Ansible:
+
 	```bash
 	sudo apt update
 	sudo apt install ansible -y
 	```
+
 2. Verificar la disponibilidad de ```ansible-galaxy```:
+
 	```bash
 	ansible-galaxy --help
 	```
+
 ### Ejecutar el Playbook
 - Para poder iniciar todos los servicios, debemos de ejecutar:
 
