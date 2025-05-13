@@ -3,7 +3,6 @@
 Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Docker.
 ## Estructura del proyecto
 
-	```text
 	proyectoFinalCurso/
 	├── app/
 	│   ├── app.py
@@ -12,7 +11,6 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
 	├── prometheus.yml
 	├── docker-compose.yml
 	└── playbook.yml
-	```
 
 ## Ejecutar el proyecto
 ### Requisitos previos
