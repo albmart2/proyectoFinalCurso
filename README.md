@@ -8,3 +8,4 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
     |   |-requirments.txt
     |-prometheus.yml
     |-docker-compose.yml
+    |-playbook.yml
