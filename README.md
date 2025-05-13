@@ -2,13 +2,17 @@
 ## Idea general del proyecto
 Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Docker.
 ## Estructura del proyecto
-    |-app/
-    |   |-app.py
-    |   |-Dockerfile
-    |   |-requirments.txt
-    |-prometheus.yml
-    |-docker-compose.yml
-    |-playbook.yml
+	```text
+	proyectoFinalCurso/
+	├── app/
+	│   ├── app.py
+	│   ├── Dockerfile
+	│   └── requirements.txt
+	├── prometheus.yml
+	├── docker-compose.yml
+	└── playbook.yml
+	```
+
 ## Ejecutar el proyecto
 ### Requisitos previos
 Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
