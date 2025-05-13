@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s # Frecuencia con la que Prometheus recopilará las métricas.
+
+scrape_configs:
+  - job_name: 'mi_pagina_web_flask' # Nombre del trabajo de recolección
+    # Prometheus necesita saber dónde encontrar el endpoint /metrics de tu aplicación.
+    # 'mi_pagina_web:8080' se refiere al servicio 'mi_pagina_web' definido en docker-compose.yml
+    # y al puerto 8080 que expone la aplicación dentro de la red de Docker.
+    static_configs:
+      - targets: ['mi_pagina_web:8080']
+

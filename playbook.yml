@@ -1,0 +1,21 @@
+# playbook.yml
+- name: Gestionar la pila de monitorización con Docker Compose
+  hosts: localhost   # Indica que el playbook se ejecuta en la máquina local
+  connection: local  # Usa una conexión local, no SSH
+  gather_facts: false # No necesitamos recoger 'facts' para esta tarea simple
+
+  tasks:
+    - name: Levantar los servicios definidos en docker-compose.yml
+      community.docker.docker_compose_v2:
+        project_src: .  # Ruta al directorio que contiene docker-compose.yml ('.' es el directorio actual)
+        state: present  # 'present' asegura que los servicios estén creados y corriendo (equivale a 'docker compose up -d')
+      tags:
+        - start
+
+    - name: Detener y eliminar los servicios definidos en docker-compose.yml
+      community.docker.docker_compose_v2:
+        project_src: .
+        state: absent   # 'absent' asegura que los servicios estén parados y eliminados (equivale a 'docker compose down')
+      tags:
+        - stop
+
