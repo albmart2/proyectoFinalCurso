@@ -13,8 +13,12 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
 ### Requisitos previos
 Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
 ### Ejecutar el Playbook
-Para poder iniciar todos los servicios, debemos de ejecutar:
+- Para poder iniciar todos los servicios, debemos de ejecutar:
 
 	ansible-playbook playbook.yml --tags "start"
+
+- Para poder detener y eliminar todos los servicios, debemos de ejecutar:
+	
+	ansible-playbook playbook.yml --tags "stop"
 ## Explicacion del proyecto detalladamente
 
