@@ -26,7 +26,7 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 	sudo apt install ansible -y
 	```
 
-2. Verificar la disponibilidad de ```ansible-galaxy```:
+2. Verificar la disponibilidad de ansible-galaxy:
 
 	```bash
 	ansible-galaxy --help
