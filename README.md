@@ -47,12 +47,10 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 
 ## Explicacion del proyecto detalladamente
 
-### app/app.py
-- Función:
-
+### /app/app.py
 	Contiene el código Python de la web, expone las rutas, genera los números aleatorios y publica las métricas para Prometheus.
 
-app/requirements.txt
+### /app/requirements.txt
 Definición:
 Lista de dependencias de Python.
 Función:
