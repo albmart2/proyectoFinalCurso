@@ -46,3 +46,38 @@ Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el p
 	```
 
 ## Explicacion del proyecto detalladamente
+
+### app/app.py
+- Función:
+
+	Contiene el código Python de la web, expone las rutas, genera los números aleatorios y publica las métricas para Prometheus.
+
+app/requirements.txt
+Definición:
+Lista de dependencias de Python.
+Función:
+Indica los paquetes que deben instalarse (por ejemplo, Flask y prometheus_client) para que la aplicación funcione correctamente.
+
+app/Dockerfile
+Definición:
+Archivo de construcción de la imagen Docker de la aplicación.
+Función:
+Define cómo construir el contenedor de la app Flask (instala dependencias, copia el código, expone el puerto, etc.).
+
+prometheus.yml
+Definición:
+Archivo de configuración de Prometheus.
+Función:
+Indica a Prometheus qué endpoints debe monitorizar (scrape), con qué frecuencia y bajo qué nombre.
+
+docker-compose.yml
+Definición:
+Archivo de orquestación de Docker Compose.
+Función:
+Define y coordina todos los servicios del proyecto: la app Flask, Prometheus, Grafana y sus volúmenes/redes.
+
+playbook.yml (opcional)
+Definición:
+Playbook de Ansible.
+Función:
+Automatiza tareas como levantar o parar los servicios definidos en Docker Compose.
