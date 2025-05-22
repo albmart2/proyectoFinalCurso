@@ -16,7 +16,7 @@ Falicitar el monitoreo.
 
 ## Tecnologías 
 
-<table>
+<table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="text-align:center;" colspan="2">Frontend</th>
     <th style="text-align:center;" colspan="2">Backend</th>
