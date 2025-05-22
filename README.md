@@ -65,11 +65,6 @@ Falicitar el monitoreo.
 	- Implementación de Dynatrace para APM (Application Performance Monitoring / Gestión del Rendimiento de Aplicaciones) avanzado.
 	- Infrastructura como código con Terraform.
 
-- **VALOR PARA LA ORGANIZACIÓN**
-	- Reducción de tiempo de inactividad.
-	- Optimización de recursos de infraestructura.
-	- Mejora en tiempos de respuesta ante incidentes.
-
 ## Estructura del proyecto
 
 	proyectoFinalCurso/
