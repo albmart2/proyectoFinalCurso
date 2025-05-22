@@ -16,7 +16,7 @@ Falicitar el monitoreo.
 
 ## Tecnologías 
 
-<table style="width: 100%">
+<table style="width: auto">
   <tr>
     <th style="text-align:center;" colspan="2">Frontend</th>
     <th style="text-align:center;" colspan="2">Backend</th>
