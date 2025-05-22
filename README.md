@@ -1,6 +1,37 @@
-# Proyecto Final Curso DevOps | AIOps
-## Idea general del proyecto
-Este proyecto permite tener un entorno de monitorización completo, todo gestionado a través de Ansible.
+# Información general del proyecto
+
+## ¿De qué trata el proyecto?
+
+### Desarrollo
+
+Aplicación web creada en Python/Flask.
+
+### Función
+
+Visualización de métricas e información en tiempo real.
+
+### Objetivo
+
+Falicitar el monitoreo.
+
+## Tecnologías 
+
+<table>
+  <tr>
+    <th style="text-align:center;" colspan="2">Frontend</th>
+    <th style="text-align:center;" colspan="2">Backend</th>
+    <th style="text-align:center;">Contenedores</th>
+  </tr>
+  <tr>
+    <td>HTML5</td>
+	<td>CSS3</td>
+    <td>Python</td>
+	<td>Flask</td>
+    <td>Docker Compose</td>
+  </tr>
+</table>
+
+
 ## Estructura del proyecto
 
 	proyectoFinalCurso/
@@ -11,39 +42,6 @@ Este proyecto permite tener un entorno de monitorización completo, todo gestion
 	├── prometheus.yml
 	├── docker-compose.yml
 	└── playbook.yml
-
-## Ejecutar el proyecto
-### Requisitos previos
-Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
-### Instalacion Ansible en Linux (Debian/Ubuntu)
-1. Instalar Ansible:
-
-	```bash
-	sudo apt update
-	```
-
-	```bash
-	sudo apt install ansible -y
-	```
-
-2. Verificar la disponibilidad de ```ansible-galaxy```:
-
-	```bash
-	ansible-galaxy --help
-	```
-
-### Ejecutar el Playbook
-- Para poder iniciar todos los servicios, debemos de ejecutar:
-
-	```bash
-	ansible-playbook playbook.yml --tags "start"
-	```
-
-- Para poder detener y eliminar todos los servicios, debemos de ejecutar:
-	
-	```bash
-	ansible-playbook playbook.yml --tags "stop"
-	```
 
 ## Explicacion del proyecto detalladamente
 
@@ -70,3 +68,36 @@ Define y coordina todos los servicios del proyecto: la app Flask, Prometheus, Gr
 ### playbook.yml
 
 Automatiza tareas como levantar o parar los servicios definidos en Docker Compose.
+
+# Ejecución el proyecto
+## Requisitos previos
+Antes de ejecutar el proyecto, se debe de tener instalado antes de ejecutar el playbook.
+## Instalacion Ansible en Linux (Debian/Ubuntu)
+1. Instalar Ansible:
+
+	```bash
+	sudo apt update
+	```
+
+	```bash
+	sudo apt install ansible -y
+	```
+
+2. Verificar la disponibilidad de ```ansible-galaxy```:
+
+	```bash
+	ansible-galaxy --help
+	```
+
+## Ejecutar el Playbook
+- Para poder iniciar todos los servicios, debemos de ejecutar:
+
+	```bash
+	ansible-playbook playbook.yml --tags "start"
+	```
+
+- Para poder detener y eliminar todos los servicios, debemos de ejecutar:
+	
+	```bash
+	ansible-playbook playbook.yml --tags "stop"
+	```
