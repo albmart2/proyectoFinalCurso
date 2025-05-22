@@ -5,31 +5,28 @@ from prometheus_client import Counter, Gauge, Histogram, generate_latest, CONTEN
 
 app = Flask(__name__)
 
-# Métricas personalizadas
 VISITAS_PAGINA = Counter(
     'app_visitas_pagina_total',
     'Número total de veces que la página principal ha sido visitada'
 )
+
 ULTIMO_NUMERO_ALEATORIO = Gauge(
     'app_ultimo_numero_aleatorio',
     'El último número aleatorio generado por la aplicación'
 )
 
-# Contador de visitas por endpoint, método y código de estado
 REQUEST_COUNT = Counter(
     'http_requests_total',
     'Total HTTP Requests',
     ['method', 'endpoint', 'status']
 )
 
-# Histograma para el tiempo de respuesta por endpoint y método
 REQUEST_LATENCY = Histogram(
     'http_request_duration_seconds',
     'HTTP request latency in seconds',
     ['method', 'endpoint']
 )
 
-# Contador de errores por endpoint, método y código de estado
 ERROR_COUNT = Counter(
     'http_request_errors_total',
     'Total HTTP Request Errors',
@@ -42,17 +39,14 @@ def start_timer():
 
 @app.after_request
 def record_metrics(response):
-    # Calcula duración
     resp_time = time.time() - getattr(request, 'start_time', time.time())
     method = request.method
     endpoint = request.path
     status = response.status_code
 
-    # Actualiza métricas
     REQUEST_COUNT.labels(method=method, endpoint=endpoint, status=status).inc()
     REQUEST_LATENCY.labels(method=method, endpoint=endpoint).observe(resp_time)
 
-    # Si es error (status >= 400)
     if status >= 400:
         ERROR_COUNT.labels(method=method, endpoint=endpoint, status=status).inc()
 

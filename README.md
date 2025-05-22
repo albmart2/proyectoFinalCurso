@@ -16,7 +16,7 @@ Falicitar el monitoreo.
 
 ## Tecnologías 
 
-<table style="width: auto">
+<table style="width: 100%">
   <tr>
     <th style="text-align:center;" colspan="2">Frontend</th>
     <th style="text-align:center;" colspan="2">Backend</th>
@@ -31,6 +31,44 @@ Falicitar el monitoreo.
   </tr>
 </table>
 
+## Monitoreo y métricas
+
+- **RECOLECCIÓN**
+	
+	Prometheus captura datos de rendimiento constante.
+
+- **VISUALIZACIÓN**
+
+	Gráficos de peticiones HTTP, tasa de errores, etc.
+
+## Despliegue y orquestración
+
+- **CONFIGURACIÓN CON ANSIBLE**
+	- Automatización de instalación y configuración.
+	- Ansible se encargará de levantar y configurar el Docker Compose para orquestrar todo el despliegue.
+
+- **CONTENERIZACIÓN CON DOCKER**
+	- Empaquetado de aplicación y dependencias en contenedores.
+
+- **ORQUESTRACIÓN CON DOCKER COMPOSE**
+	- Gestión de múltiples contenedores como un servicio unificado.
+
+## Ventajas diferenciales
+
+- **ESCALABILIDAD SUPERIOR**
+	- Sistema completo de monitoreo en producción.
+	- Despliegue automatizado y sin intervención manual.
+	- Visualización unificada de métricas.
+
+- **MEJORAS FUTURAS**
+	- Integración con OpenTelemetry para trazabilidad.
+	- Implementación de Dynatrace para APM (Application Performance Monitoring / Gestión del Rendimiento de Aplicaciones) avanzado.
+	- Infrastructura como código con Terraform.
+
+- **VALOR PARA LA ORGANIZACIÓN**
+	- Reducción de tiempo de inactividad.
+	- Optimización de recursos de infraestructura.
+	- Mejora en tiempos de respuesta ante incidentes.
 
 ## Estructura del proyecto
 

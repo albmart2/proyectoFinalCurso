@@ -1,4 +1,3 @@
-# playbook.yml
 - name: Gestionar la pila de monitorización con Docker Compose
   hosts: localhost
   connection: local
@@ -8,7 +7,7 @@
     - name: Asegurar que los servicios Docker Compose estén levantados
       ansible.builtin.command: docker compose up -d
       args:
-        chdir: "{{ playbook_dir }}" # playbook_dir es el directorio donde está este playbook.yml
+        chdir: "{{ playbook_dir }}"
       register: compose_up_result
       changed_when: "'Creating' in compose_up_result.stdout or 'Recreating' in compose_up_result.stdout or 'Starting' in compose_up_result.stdout"
       failed_when: compose_up_result.rc != 0 and not ('is up-to-date' in compose_up_result.stdout or 'Running' in compose_up_result.stdout) # Considera no fallar si ya está arriba

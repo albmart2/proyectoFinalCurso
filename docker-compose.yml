@@ -1,42 +1,34 @@
 services:
-  # Servicio de tu aplicación web
   mi_pagina_web:
-    build: ./app  # Indica a Docker Compose que construya la imagen desde el Dockerfile en el directorio ./app
+    build: ./app
     container_name: mi_pagina_web_container
     ports:
-      - "8080:8080" # Mapea el puerto 8080 del contenedor al puerto 8080 de tu máquina host
+      - "8080:8080"
     restart: unless-stopped
 
-  # Servicio de Prometheus
   prometheus:
-    image: prom/prometheus:latest # Utiliza la imagen oficial de Prometheus
+    image: prom/prometheus:latest
     container_name: prometheus_container
     volumes:
-      # Monta tu archivo de configuración de Prometheus dentro del contenedor
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      # Opcional: Monta un volumen para persistir los datos de Prometheus
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090" # Mapea el puerto 9090 de Prometheus al puerto 9090 de tu máquina host
+      - "9090:9090"
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml' # Asegura que Prometheus use tu archivo de configuración
+      - '--config.file=/etc/prometheus/prometheus.yml'
     restart: unless-stopped
 
-  # Servicio de Grafana
   grafana:
-    image: grafana/grafana-oss:latest # Utiliza la imagen oficial de Grafana (Open Source)
+    image: grafana/grafana-oss:latest
     container_name: grafana_container
     ports:
-      - "3000:3000" # Mapea el puerto 3000 de Grafana al puerto 3000 de tu máquina host
+      - "3000:3000"
     volumes:
-      # Opcional: Monta un volumen para persistir los datos de Grafana (dashboards, configuraciones)
       - grafana_data:/var/lib/grafana
     depends_on:
-      - prometheus # Asegura que Grafana inicie después de Prometheus
+      - prometheus
     restart: unless-stopped
 
-# Opcional: Define volúmenes nombrados para persistir datos
 volumes:
   prometheus_data:
   grafana_data:
-
